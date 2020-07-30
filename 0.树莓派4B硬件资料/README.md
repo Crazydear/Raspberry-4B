@@ -119,10 +119,8 @@ Params:
         sd_overclock            Clock (in MHz) to use when the MMC framework
                                 requests 50MHz
     
-        sd_poll_once            Looks for a card once after booting. Useful
-                                for network booting scenarios to avoid the
-                                overhead of continuous polling. N.B. Using
-                                this option restricts the system to using a
+        sd_poll_once            Looks for a card once after booting. Useful for network booting scenarios to avoid the
+                                overhead of continuous polling. N.B. Using this option restricts the system to using a
                                 single card per boot (or none at all).
                                 (default off)
     
@@ -132,43 +130,31 @@ Params:
     
         sd_debug                Enable debug output from SD driver (default off)
     
-        sdio_overclock          Clock (in MHz) to use when the MMC framework
-                                requests 50MHz for the SDIO/WiFi interface.
+        sdio_overclock          Clock (in MHz) to use when the MMC framework requests 50MHz for the SDIO/WiFi interface.
     
-        tx_lpi_timer            Set the delay in microseconds between going idle
-                                and entering the low power state (default 600).
+        tx_lpi_timer            Set the delay in microseconds between going idle and entering the low power state (default 600).
                                 Requires EEE to be enabled - see "eee".
     
         uart0                   Set to "off" to disable uart0 (default "on")
     
-        uart1                   Set to "on" or "off" to enable or disable uart1
-                                (default varies)
+        uart1                   Set to "on" or "off" to enable or disable uart1 (default varies)
     
-        watchdog                Set to "on" to enable the hardware watchdog
-                                (default "off")
+        watchdog                Set to "on" to enable the hardware watchdog (default "off")
     
-        act_led_trigger         Choose which activity the LED tracks.
-                                Use "heartbeat" for a nice load indicator.
+        act_led_trigger         Choose which activity the LED tracks. Use "heartbeat" for a nice load indicator.
                                 (default "mmc")
     
-        act_led_activelow       Set to "on" to invert the sense of the LED
-                                (default "off")
-                                N.B. For Pi 3B, 3B+, 3A+ and 4B, use the act-led
-                                overlay.
+        act_led_activelow       Set to "on" to invert the sense of the LED (default "off")
+                                N.B. For Pi 3B, 3B+, 3A+ and 4B, use the act-led overlay.
     
-        act_led_gpio            Set which GPIO to use for the activity LED
-                                (in case you want to connect it to an external
-                                device)
-                                (default "16" on a non-Plus board, "47" on a
-                                Plus or Pi 2)
-                                N.B. For Pi 3B, 3B+, 3A+ and 4B, use the act-led
-                                overlay.
+        act_led_gpio            Set which GPIO to use for the activity LED (in case you want to connect it to an external
+                                device) (default "16" on a non-Plus board, "47" on a Plus or Pi 2)
+                                N.B. For Pi 3B, 3B+, 3A+ and 4B, use the act-led overlay.
     
         pwr_led_trigger
         pwr_led_activelow
         pwr_led_gpio
-                                As for act_led_*, but using the PWR LED.
-                                Not available on Model A/B boards.
+                                As for act_led_*, but using the PWR LED. Not available on Model A/B boards.
     
         N.B. It is recommended to only enable those interfaces that are needed.
         Leaving all interfaces enabled can lead to unwanted behaviour (i2c_vc
@@ -181,19 +167,13 @@ Params:
 
 
 Name:   act-led
-Info:   Pi 3B, 3B+, 3A+ and 4B use a GPIO expander to drive the LEDs which can
-        only be accessed from the VPU. There is a special driver for this with a
-        separate DT node, which has the unfortunate consequence of breaking the
-        act_led_gpio and act_led_activelow dtparams.
-        This overlay changes the GPIO controller back to the standard one and
-        restores the dtparams.
+Info:   Pi 3B, 3B+, 3A+ and 4B use a GPIO expander to drive the LEDs which can only be accessed from the VPU. There is a special driver for this with a
+        separate DT node, which has the unfortunate consequence of breaking the act_led_gpio and act_led_activelow dtparams.
+        This overlay changes the GPIO controller back to the standard one and  restores the dtparams.
 Load:   dtoverlay=act-led,<param>=<val>
-Params: activelow               Set to "on" to invert the sense of the LED
-                                (default "off")
+Params: activelow               Set to "on" to invert the sense of the LED (default "off")
 
-        gpio                    Set which GPIO to use for the activity LED
-                                (in case you want to connect it to an external
-                                device)
+        gpio                    Set which GPIO to use for the activity LED (in case you want to connect it to an external device)
                                 REQUIRED
 
 
@@ -213,18 +193,11 @@ Params: card-name               Override the default, "adau7002", card name.
 Name:   ads1015
 Info:   Overlay for activation of Texas Instruments ADS1015 ADC over I2C
 Load:   dtoverlay=ads1015,<param>=<val>
-Params: addr                    I2C bus address of device. Set based on how the
-                                addr pin is wired. (default=0x48 assumes addr
-                                is pulled to GND)
+Params: addr                    I2C bus address of device. Set based on how the addr pin is wired. (default=0x48 assumes addr is pulled to GND)
         cha_enable              Enable virtual channel a. (default=true)
-        cha_cfg                 Set the configuration for virtual channel a.
-                                (default=4 configures this channel for the
-                                voltage at A0 with respect to GND)
-        cha_datarate            Set the datarate (samples/sec) for this channel.
-                                (default=4 sets 1600 sps)
-        cha_gain                Set the gain of the Programmable Gain
-                                Amplifier for this channel. (default=2 sets the
-                                full scale of the channel to 2.048 Volts)
+        cha_cfg                 Set the configuration for virtual channel a. (default=4 configures this channel for the voltage at A0 with respect to GND)
+        cha_datarate            Set the datarate (samples/sec) for this channel. (default=4 sets 1600 sps)
+        cha_gain                Set the gain of the Programmable Gain Amplifier for this channel. (default=2 sets the full scale of the channel to 2.048 Volts)
 
         Channel (ch) parameters can be set for each enabled channel.
         A maximum of 4 channels can be enabled (letters a thru d).
@@ -235,18 +208,11 @@ Params: addr                    I2C bus address of device. Set based on how the
 Name:   ads1115
 Info:   Texas Instruments ADS1115 ADC
 Load:   dtoverlay=ads1115,<param>[=<val>]
-Params: addr                    I2C bus address of device. Set based on how the
-                                addr pin is wired. (default=0x48 assumes addr
-                                is pulled to GND)
+Params: addr                    I2C bus address of device. Set based on how the addr pin is wired. (default=0x48 assumes addr is pulled to GND)
         cha_enable              Enable virtual channel a.
-        cha_cfg                 Set the configuration for virtual channel a.
-                                (default=4 configures this channel for the
-                                voltage at A0 with respect to GND)
-        cha_datarate            Set the datarate (samples/sec) for this channel.
-                                (default=7 sets 860 sps)
-        cha_gain                Set the gain of the Programmable Gain
-                                Amplifier for this channel. (Default 1 sets the
-                                full scale of the channel to 4.096 Volts)
+        cha_cfg                 Set the configuration for virtual channel a. (default=4 configures this channel for the voltage at A0 with respect to GND)
+        cha_datarate            Set the datarate (samples/sec) for this channel. (default=7 sets 860 sps)
+        cha_gain                Set the gain of the Programmable Gain  Amplifier for this channel. (Default 1 sets the full scale of the channel to 4.096 Volts)
 
         Channel parameters can be set for each enabled channel.
         A maximum of 4 channels can be enabled (letters a thru d).
@@ -304,17 +270,10 @@ Load:   dtoverlay=akkordion-iqdacplus,<param>=<val>
 Params: 24db_digital_gain       Allow gain to be applied via the PCM512x codec
                                 Digital volume control. Enable with
                                 dtoverlay=akkordion-iqdacplus,24db_digital_gain
-                                (The default behaviour is that the Digital
-                                volume control is limited to a maximum of
-                                0dB. ie. it can attenuate but not provide
-                                gain. For most users, this will be desired
-                                as it will prevent clipping. By appending
-                                the 24db_digital_gain parameter, the Digital
-                                volume control will allow up to 24dB of
-                                gain. If this parameter is enabled, it is the
-                                responsibility of the user to ensure that
-                                the Digital volume control is set to a value
-                                that does not result in clipping/distortion!)
+                                (The default behaviour is that the Digital volume control is limited to a maximum of 0dB. ie. it can attenuate but not provide
+                                gain. For most users, this will be desired as it will prevent clipping. By appending the 24db_digital_gain parameter, the Digital
+                                volume control will allow up to 24dB of gain. If this parameter is enabled, it is the responsibility of the user to ensure that
+                                the Digital volume control is set to a value that does not result in clipping/distortion!)
 
 Name:   allo-boss-dac-pcm512x-audio
 Info:   Configures the Allo Boss DAC audio cards.
@@ -350,17 +309,10 @@ Info:   Configures the Allo Piano DAC (2.0/2.1) audio cards.
 Load:   dtoverlay=allo-piano-dac-pcm512x-audio,<param>
 Params: 24db_digital_gain       Allow gain to be applied via the PCM512x codec
                                 Digital volume control.
-                                (The default behaviour is that the Digital
-                                volume control is limited to a maximum of
-                                0dB. ie. it can attenuate but not provide
-                                gain. For most users, this will be desired
-                                as it will prevent clipping. By appending
-                                the 24db_digital_gain parameter, the Digital
-                                volume control will allow up to 24dB of
-                                gain. If this parameter is enabled, it is the
-                                responsibility of the user to ensure that
-                                the Digital volume control is set to a value
-                                that does not result in clipping/distortion!)
+                                (The default behaviour is that the Digital volume control is limited to a maximum of 0dB. ie. it can attenuate but not provide
+                                gain. For most users, this will be desired as it will prevent clipping. By appending the 24db_digital_gain parameter, the Digital
+                                volume control will allow up to 24dB of gain. If this parameter is enabled, it is the responsibility of the user to ensure that
+                                the Digital volume control is set to a value that does not result in clipping/distortion!)
 
 
 Name:   allo-piano-dac-plus-pcm512x-audio
@@ -368,20 +320,11 @@ Info:   Configures the Allo Piano DAC (2.1) audio cards.
 Load:   dtoverlay=allo-piano-dac-plus-pcm512x-audio,<param>
 Params: 24db_digital_gain       Allow gain to be applied via the PCM512x codec
                                 Digital volume control.
-                                (The default behaviour is that the Digital
-                                volume control is limited to a maximum of
-                                0dB. ie. it can attenuate but not provide
-                                gain. For most users, this will be desired
-                                as it will prevent clipping. By appending
-                                the 24db_digital_gain parameter, the Digital
-                                volume control will allow up to 24dB of
-                                gain. If this parameter is enabled, it is the
-                                responsibility of the user to ensure that
-                                the Digital volume control is set to a value
-                                that does not result in clipping/distortion!)
-        glb_mclk                This option is only with Kali board. If enabled,
-                                MCLK for Kali is used and PLL is disabled for
-                                better voice quality. (default Off)
+                                (The default behaviour is that the Digital volume control is limited to a maximum of 0dB. ie. it can attenuate but not provide
+                                gain. For most users, this will be desired as it will prevent clipping. By appending the 24db_digital_gain parameter, the Digital
+                                volume control will allow up to 24dB of gain. If this parameter is enabled, it is the responsibility of the user to ensure that
+                                the Digital volume control is set to a value that does not result in clipping/distortion!)
+        glb_mclk                This option is only with Kali board. If enabled, MCLK for Kali is used and PLL is disabled for better voice quality. (default Off)
 
 
 Name:   anyspi
@@ -401,10 +344,8 @@ Info:   Universal device tree overlay for SPI devices
 Load:   dtoverlay=anyspi,<param>=<val>
 Params: spi<n>-<m>              Configure device at spi<n>, cs<m>
                                 (boolean, required)
-        dev                     Set device name to search compatible module
-                                (string, required)
-        speed                   Set SPI clock frequency in Hz
-                                (integer, optional, default 500000)
+        dev                     Set device name to search compatible module(string, required)
+        speed                   Set SPI clock frequency in Hz (integer, optional, default 500000)
 
 
 Name:   apds9960
@@ -519,27 +460,17 @@ Params: <None>
 Name:   dionaudio-loco-v2
 Info:   Configures the Dion Audio LOCO-V2 DAC-AMP
 Load:   dtoverlay=dionaudio-loco-v2,<param>=<val>
-Params: 24db_digital_gain       Allow gain to be applied via the PCM512x codec
-                                Digital volume control. Enable with
-                                "dtoverlay=hifiberry-dacplus,24db_digital_gain"
-                                (The default behaviour is that the Digital
-                                volume control is limited to a maximum of
-                                0dB. ie. it can attenuate but not provide
-                                gain. For most users, this will be desired
-                                as it will prevent clipping. By appending
-                                the 24dB_digital_gain parameter, the Digital
-                                volume control will allow up to 24dB of
-                                gain. If this parameter is enabled, it is the
-                                responsibility of the user to ensure that
-                                the Digital volume control is set to a value
-                                that does not result in clipping/distortion!)
+Params: 24db_digital_gain       Allow gain to be applied via the PCM512x codec Digital volume control. Enable with "dtoverlay=hifiberry-dacplus,24db_digital_gain"
+                                (The default behaviour is that the Digital volume control is limited to a maximum of 0dB. ie. it can attenuate but not provide
+                                gain. For most users, this will be desired as it will prevent clipping. By appending the 24dB_digital_gain parameter, the Digital
+                                volume control will allow up to 24dB of gain. If this parameter is enabled, it is the responsibility of the user to ensure that
+                                the Digital volume control is set to a value that does not result in clipping/distortion!)
 
 
 Name:   disable-bt
 Info:   Disable onboard Bluetooth on Pi 3B, 3B+, 3A+, 4B and Zero W, restoring
         UART0/ttyAMA0 over GPIOs 14 & 15.
-        N.B. To disable the systemd service that initialises the modem so it
-        doesn't use the UART, use 'sudo systemctl disable hciuart'.
+        N.B. To disable the systemd service that initialises the modem so it doesn't use the UART, use 'sudo systemctl disable hciuart'.
 Load:   dtoverlay=disable-bt
 Params: <None>
 
@@ -552,16 +483,14 @@ Params: <None>
 
 Name:   dpi18
 Info:   Overlay for a generic 18-bit DPI display
-        This uses GPIOs 0-21 (so no I2C, uart etc.), and activates the output
-        2-3 seconds after the kernel has started.
+        This uses GPIOs 0-21 (so no I2C, uart etc.), and activates the output 2-3 seconds after the kernel has started.
 Load:   dtoverlay=dpi18
 Params: <None>
 
 
 Name:   dpi24
 Info:   Overlay for a generic 24-bit DPI display
-        This uses GPIOs 0-27 (so no I2C, uart etc.), and activates the output
-        2-3 seconds after the kernel has started.
+        This uses GPIOs 0-27 (so no I2C, uart etc.), and activates the output 2-3 seconds after the kernel has started.
 Load:   dtoverlay=dpi24
 Params: <None>
 
@@ -569,10 +498,8 @@ Params: <None>
 Name:   draws
 Info:   Configures the NW Digital Radio DRAWS Hat
 
-        The board includes an ADC to measure various board values and also
-        provides two analog user inputs on the expansion header.  The ADC
-        can be configured for various sample rates and gain values to adjust
-        the input range.  Tables describing the two parameters follow.
+        The board includes an ADC to measure various board values and also provides two analog user inputs on the expansion header.  The ADC
+        can be configured for various sample rates and gain values to adjust the input range.  Tables describing the two parameters follow.
     
         ADC Gain Values:
             0 = +/- 6.144V
@@ -597,22 +524,17 @@ Load:   dtoverlay=draws,<param>=<val>
 Params: draws_adc_ch4_gain      Sets the full scale resolution of the ADCs
                                 input voltage sensor (default 1)
 
-        draws_adc_ch4_datarate  Sets the datarate of the ADCs input voltage
-                                sensor
+        draws_adc_ch4_datarate  Sets the datarate of the ADCs input voltage sensor
     
-        draws_adc_ch5_gain      Sets the full scale resolution of the ADCs
-                                5V rail voltage sensor (default 1)
+        draws_adc_ch5_gain      Sets the full scale resolution of the ADCs 5V rail voltage sensor (default 1)
     
-        draws_adc_ch5_datarate  Sets the datarate of the ADCs 4V rail voltage
-                                sensor
+        draws_adc_ch5_datarate  Sets the datarate of the ADCs 4V rail voltage sensor
     
-        draws_adc_ch6_gain      Sets the full scale resolution of the ADCs
-                                AIN2 input (default 2)
+        draws_adc_ch6_gain      Sets the full scale resolution of the ADCs AIN2 input (default 2)
     
         draws_adc_ch6_datarate  Sets the datarate of the ADCs AIN2 input
     
-        draws_adc_ch7_gain      Sets the full scale resolution of the ADCs
-                                AIN3 input (default 2)
+        draws_adc_ch7_gain      Sets the full scale resolution of the ADCs AIN3 input (default 2)
     
         draws_adc_ch7_datarate  Sets the datarate of the ADCs AIN3 input
     
@@ -620,8 +542,7 @@ Params: draws_adc_ch4_gain      Sets the full scale resolution of the ADCs
 
 
 Name:   dwc-otg
-Info:   Selects the dwc_otg USB controller driver which has fiq support. This
-        is the default on all except the Pi Zero which defaults to dwc2.
+Info:   Selects the dwc_otg USB controller driver which has fiq support. This is the default on all except the Pi Zero which defaults to dwc2.
 Load:   dtoverlay=dwc-otg
 Params: <None>
 
@@ -633,8 +554,7 @@ Params: dr_mode                 Dual role mode: "host", "peripheral" or "otg"
 
         g-rx-fifo-size          Size of rx fifo size in gadget mode
     
-        g-np-tx-fifo-size       Size of non-periodic tx fifo size in gadget
-                                mode
+        g-np-tx-fifo-size       Size of non-periodic tx fifo size in gadget mode
 
 
 [ The ds1307-rtc overlay has been deleted. See i2c-rtc. ]
@@ -728,22 +648,15 @@ Params: gpio_pin                Output GPIO (default 18)
 
 
 Name:   gpio-key
-Info:   This is a generic overlay for activating GPIO keypresses using
-        the gpio-keys library and this dtoverlay. Multiple keys can be
-        set up using multiple calls to the overlay for configuring
-        additional buttons or joysticks. You can see available keycodes
-        at https://github.com/torvalds/linux/blob/v4.12/include/uapi/
-        linux/input-event-codes.h#L64
+Info:   This is a generic overlay for activating GPIO keypresses using the gpio-keys library and this dtoverlay. Multiple keys can be
+        set up using multiple calls to the overlay for configuring additional buttons or joysticks. You can see available keycodes
+        at https://github.com/torvalds/linux/blob/v4.12/include/uapi/linux/input-event-codes.h#L64
 Load:   dtoverlay=gpio-key,<param>=<val>
 Params: gpio                    GPIO pin to trigger on (default 3)
-        active_low              When this is 1 (active low), a falling
-                                edge generates a key down event and a
-                                rising edge generates a key up event.
-                                When this is 0 (active high), this is
-                                reversed. The default is 1 (active low)
+        active_low              When this is 1 (active low), a falling edge generates a key down event and a rising edge generates a key up event.
+                                When this is 0 (active high), this is reversed. The default is 1 (active low)
         gpio_pull               Desired pull-up/down state (off, down, up)
-                                Default is "up". Note that the default pin
-                                (GPIO3) has an external pullup
+                                Default is "up". Note that the default pin (GPIO3) has an external pullup
         label                   Set a label for the key
         keycode                 Set the key code for the button
 
@@ -949,23 +862,13 @@ Name:   hifiberry-dacplusadcpro
 Info:   Configures the HifiBerry DAC+ADC PRO audio card
 Load:   dtoverlay=hifiberry-dacplusadcpro,<param>=<val>
 Params: 24db_digital_gain       Allow gain to be applied via the PCM512x codec
-                                Digital volume control. Enable with
-                                "dtoverlay=hifiberry-dacplusadcpro,24db_digital_gain"
-                                (The default behaviour is that the Digital
-                                volume control is limited to a maximum of
-                                0dB. ie. it can attenuate but not provide
-                                gain. For most users, this will be desired
-                                as it will prevent clipping. By appending
-                                the 24dB_digital_gain parameter, the Digital
-                                volume control will allow up to 24dB of
-                                gain. If this parameter is enabled, it is the
-                                responsibility of the user to ensure that
-                                the Digital volume control is set to a value
-                                that does not result in clipping/distortion!)
-        slave                   Force DAC+ADC Pro into slave mode, using Pi as
-                                master for bit clock and frame clock.
-        leds_off                If set to 'true' the onboard indicator LEDs
-                                are switched off at all times.
+                                Digital volume control. Enable with "dtoverlay=hifiberry-dacplusadcpro,24db_digital_gain" (The default behaviour is that the Digital
+                                volume control is limited to a maximum of 0dB. ie. it can attenuate but not provide gain. For most users, this will be desired
+                                as it will prevent clipping. By appending the 24dB_digital_gain parameter, the Digital
+                                volume control will allow up to 24dB of gain. If this parameter is enabled, it is the responsibility of the user to ensure that
+                                the Digital volume control is set to a value  that does not result in clipping/distortion!)
+        slave                   Force DAC+ADC Pro into slave mode, using Pi as  master for bit clock and frame clock.
+        leds_off                If set to 'true' the onboard indicator LEDs are switched off at all times.
 
 
 Name:   hifiberry-dacplusdsp
