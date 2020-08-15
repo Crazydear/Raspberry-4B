@@ -8,6 +8,8 @@
 
 [树莓派boot文件项目地址](https://github.com/raspberrypi/firmware)
 
+[raspi-config](https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/)
+
 [清华镜像源](https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/)   这个是Raspberry OS的镜像，其它的镜像可以自己找
 
 [树莓派实验室](https://shumeipai.nxez.com/)
@@ -22,6 +24,7 @@
 ## 3.搭建CCAA的下载环境
 ## 4.根据CUP温度控制风扇
 ## 5.定时语音播报
+## 6.I2C 驱动 LCD1602 液晶屏.md
 
 
 # 项目时间线
