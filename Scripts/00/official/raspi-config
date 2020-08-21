@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo"raspi-config安装脚本"
+url="https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20200727_all.deb"
+cd /tmp
+wget $url
+sudo apt-get install -y lua5.1  libatopology2 libfftw3-single3 libsamplerate0 alsa-utils
+sudo dpkg -i raspi-config_20200727_all.deb
+echo"install completed"
