@@ -25,6 +25,19 @@ svn checkout https://github.com/Crazydear/Raspberry-4B/trunk/Scripts
 ## 5.定时语音播报
 ## 6.I2C 驱动 LCD1602 液晶屏.md
 
+# 脚本列表
+
+| 序号 | 脚本功能  | 链接     |
+| ---- | ------------ | -------------- |
+| 01   | 阿里云DDNS | [链接](./Scripts/00/aliddns) |
+| 02   | Github文件下载  | [链接](./Scripts/00/Downgithub) |
+| 03   | raspi-config安装脚本 | [链接](./Scripts/00/official/raspi-config) |
+| 04   | vcgencmd安装脚本 | [链接](./Scripts/00/official/vcgencmd) |
+| 05   | 风扇控制         | [Python版](./Scripts/00-09/04-fan.py)  \|  [shell版](./Scripts/00-09/04-fan.sh) |
+| 06   | 定时播报 | [链接](./Scripts/00-09/05-broadcast.py) |
+| 07   | LCD显示 | [链接](./Scripts/00-09/06-LCD1602.py)   |
+|      |                      |                          |
+|      |                      |                          |
 
 # 项目时间线
 
