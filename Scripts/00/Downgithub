@@ -1,0 +1,8 @@
+#!/bin/bash
+# 单独下载github项目的某一文件夹
+
+full_string=$1
+search_string="tree\/master"
+replace_string="trunk"
+my_string=${full_string/$search_string/$replace_string}
+svn checkout $my_string
