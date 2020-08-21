@@ -2,7 +2,8 @@
 
 echo "raspi-config安装脚本"
 if ! [ -x "$(command -v raspi-config)" ]; then
-  echo 'Error: git is not installed.' >&2
+  echo 'raspi-config is not installed.' >&2
+  echo '现在开始安装...' >&2
   url="https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20200727_all.deb"
   cd /tmp
   wget $url
