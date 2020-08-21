@@ -1,0 +1,12 @@
+#!/bin/bash
+# 安装vcgencmd
+
+if [ ! -d "/opt/vc" ]; then
+  cd /opt
+  svn checkout https://github.com/raspberrypi/firmware/trunk/opt/vc
+  echo "/opt/vc/lib" >> /etc/ld.so.conf
+  ldconfig
+  echo "install vcgencmd comleted!"
+else
+  echo "vcgencmd 已经安装"  
+fi
