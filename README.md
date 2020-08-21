@@ -3,6 +3,7 @@
 先在这里写下几个常用的网址
 
 [树莓派官方下载地址](https://www.raspberrypi.org/downloads/)
+[树莓派官方镜像站](https://downloads.raspberrypi.org/)
 
 [树莓派EEPROM项目地址](https://github.com/raspberrypi/rpi-eeprom)
 
