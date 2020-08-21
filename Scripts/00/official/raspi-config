@@ -1,9 +1,17 @@
 #!/bin/bash
 
-echo"raspi-config安装脚本"
-url="https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20200727_all.deb"
-cd /tmp
-wget $url
-sudo apt-get install -y lua5.1  libatopology2 libfftw3-single3 libsamplerate0 alsa-utils
-sudo dpkg -i raspi-config_20200727_all.deb
-echo"install completed"
+echo "raspi-config安装脚本"
+if ! [ -x "$(command -v raspi-config)" ]; then
+  echo 'Error: git is not installed.' >&2
+  url="https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20200727_all.deb"
+  cd /tmp
+  wget $url
+  sudo apt-get install -y lua5.1  libatopology2 libfftw3-single3 libsamplerate0 alsa-utils
+  sudo dpkg -i raspi-config_20200727_all.deb
+  echo "install completed"
+  rm -f raspi-config_20200727_all.deb
+  exit 1
+else
+  echo "raspi-config已经安装"
+fi
+
