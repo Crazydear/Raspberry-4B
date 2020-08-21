@@ -2,20 +2,14 @@
 
 先在这里写下几个常用的网址
 
-[树莓派官方下载地址](https://www.raspberrypi.org/downloads/)
-[树莓派官方镜像站](https://downloads.raspberrypi.org/)
+| 镜像 | 软件 | 资料 |
+| ----------------- | ---------------- | -------------- |
+| [树莓派官方下载地址](https://www.raspberrypi.org/downloads/) | [树莓派boot文件项目地址](https://github.com/raspberrypi/firmware) | [树莓派实验室](https://shumeipai.nxez.com/) |
+| [树莓派官方镜像站](https://downloads.raspberrypi.org/)       | [树莓派EEPROM项目地址](https://github.com/raspberrypi/rpi-eeprom) | [树莓派资源整理汇总](https://segmentfault.com/a/1190000021776077) |
+| [清华镜像源](https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/) | [raspi-config](https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/) |         |
+|           |           |        |
 
-[树莓派EEPROM项目地址](https://github.com/raspberrypi/rpi-eeprom)
 
-[树莓派boot文件项目地址](https://github.com/raspberrypi/firmware)
-
-[raspi-config](https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/)
-
-[清华镜像源](https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/)   这个是Raspberry OS的镜像，其它的镜像可以自己找
-
-[树莓派实验室](https://shumeipai.nxez.com/)
-
-[树莓派资源整理汇总](https://segmentfault.com/a/1190000021776077)
 
 # 项目列表
 
