@@ -13,6 +13,7 @@
 脚本下载命令
 
 ```bash
+sudo apt-get install subversion
 svn checkout https://github.com/Crazydear/Raspberry-4B/trunk/Scripts
 ```
 # 项目列表
