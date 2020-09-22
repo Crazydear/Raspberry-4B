@@ -6,7 +6,7 @@
 | ----------------- | ---------------- | -------------- |
 | [树莓派官方下载地址](https://www.raspberrypi.org/downloads/) | [树莓派boot文件项目地址](https://github.com/raspberrypi/firmware) | [树莓派实验室](https://shumeipai.nxez.com/) |
 | [树莓派官方镜像站](https://downloads.raspberrypi.org/)       | [树莓派EEPROM项目地址](https://github.com/raspberrypi/rpi-eeprom) | [树莓派资源整理汇总](https://segmentfault.com/a/1190000021776077) |
-| [清华镜像源](https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/) | [raspi-config](https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/) [安装脚本](./Scripts/00/official/raspi-config)|         |
+| [清华镜像源](https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/) | [raspi-config](https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/) [安装脚本](./Scripts/00/official/raspi-config)|  [树莓派官方论坛](https://www.raspberrypi.org/forums/)       |
 |           |           |        |
 
 
@@ -37,7 +37,7 @@ svn checkout https://github.com/Crazydear/Raspberry-4B/trunk/Scripts
 | 05   | 风扇控制         | [Python版](./Scripts/00-09/04-fan.py)  \|  [shell版](./Scripts/00-09/04-fan.sh) |
 | 06   | 定时播报 | [链接](./Scripts/00-09/05-broadcast.py) |
 | 07   | LCD显示 | [链接](./Scripts/00-09/06-LCD1602.py)   |
-|      |                      |                          |
+| 08   | PCF8591模块 | [链接](./Scripts/00-09/08-PCF8591.py) |
 |      |                      |                          |
 
 # 项目时间线
