@@ -1,0 +1,5 @@
+LABEL=writable  /        ext4   defaults        0 0
+LABEL=system-boot       /boot/firmware  vfat    defaults        0       1
+/root /srv/nfs4/root  none   bind   0   0
+/var/www     /srv/nfs4/www      none   bind   0   0
+/usr/local/sbin /srv/nfs4/sbin none bind 0 0
