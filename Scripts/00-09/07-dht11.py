@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-#encoding:utf-8
+# encoding:utf-8
+
+# 安装第三方库
+# pip3 install Adafruit-DHT
 
 import Adafruit_DHT
 
