@@ -34,10 +34,11 @@ svn checkout https://github.com/Crazydear/Raspberry-4B/trunk/Scripts
 | 02   | Github文件下载  | [链接](./Scripts/00/Downgithub) |
 | 03   | raspi-config安装脚本 | [链接](./Scripts/00/official/raspi-config) |
 | 04   | vcgencmd安装脚本 | [链接](./Scripts/00/official/vcgencmd) |
-| 05   | 风扇控制         | [Python版](./Scripts/00-09/04-fan.py)  \|  [shell版](./Scripts/00-09/04-fan.sh) |
-| 06   | 定时播报 | [链接](./Scripts/00-09/05-broadcast.py) |
-| 07   | LCD显示 | [链接](./Scripts/00-09/06-LCD1602.py)   |
-| 08   | PCF8591模块 | [链接](./Scripts/00-09/08-PCF8591.py) |
+| 14   | 风扇控制         | [Python版](./Scripts/00-09/04-fan.py)  \|  [shell版](./Scripts/00-09/04-fan.sh) |
+| 15   | 定时播报 | [链接](./Scripts/00-09/05-broadcast.py) |
+| 16   | LCD显示 | [链接](./Scripts/00-09/06-LCD1602.py)   |
+| 17   | DHT11模块   | [链接](./Scripts/00-09/07-dht11a.py)  \|[链接2](./Scripts/00-09/07-dht11a.py)  |
+| 18   | PCF8591模块 | [链接](./Scripts/00-09/08-PCF8591.py) |
 |      |                      |                          |
 
 # 项目时间线
