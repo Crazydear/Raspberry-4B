@@ -1,7 +1,7 @@
 #!/usr/bin python3.8
 # -*- coding:utf-8 -*-
 
-# 所需要的库
+# 所需要的第三方库
 # pip3 install python3-rpi.gpio
 # pip3 install dht11
 # pip3 install sqlite3
