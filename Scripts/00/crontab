@@ -1,0 +1,6 @@
+# 定时任务
+
+*/1 * * * * /usr/local/sbin/fan >> /var/log/myprograme/fan.log
+*/10 * * * * python3 /usr/local/sbin/dht11a.py >> /var/log/myprograme/dht11.log
+50 22 * * * /usr/bin/rm -rf /var/log/myprograme/*.log
+55 22 * * * /sbin/shutdown -h now
