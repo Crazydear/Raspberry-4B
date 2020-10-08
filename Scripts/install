@@ -1,6 +1,69 @@
+#!/bin/bash
+# 此脚本用root用户运行
+
+function install_applacation() {
 apt-get install nginx-extras -y
 apt-get install php7.4-fpm php7.4-mbstring php7.4-mysql php7.4-sqlite3 php7.4-xml php7.4-curl php7.4-readline php7.4-zip -y
-apt install mariadb-server -y
-apt-get install python3-pip
-apt-get install subversion -y
+apt-get install mariadb-server -y
+apt-get install python3.8-dev -y
+apt-get install python3-pip -y
 apt-get install aria2 -y
+
+chmod +x 00/official/raspi-config 
+chmod +x 00/official/vcgencmd
+./00/official/raspi-config
+./00/official/vcgencmd
+
+wget https://getfrp.sh/d/frpc_linux_arm64
+mv 00/Downgithub /usr/local/sbin
+mv 00-09/04-fan.sh /usr/local/sbin/fan
+mv frpc_linux_arm64 /usr/local/sbin/frpc
+chmod +x /usr/local/sbin/Downgithub
+chmod +x /usr/local/sbin/frpc
+chmod +x /usr/local/sbin/fan
+}
+
+function unzip_html(){
+# 解压网站文件
+cd html
+unzip 404.zip
+unzip AriaNg.zip
+unzip pi-dashboard.zip
+mv 404 /var/www/html
+mv AriaNg /var/www/html
+mv pi-dashboard /var/www/html
+cd ..
+}
+
+function install_dht11(){
+mkdir /root/program/data
+pip3 install python3-rpi.gpio
+pip3 install dht11
+pip3 install sqlite3
+mv 00-09/07-dht11a.py /usr/local/sbin/dht11a
+chmod +x /usr/local/sbin/dht11a
+}
+
+while getopts "install:unzip" arg #选项后面的冒号表示该选项需要参数
+do
+        case $arg in
+             install)
+                if [arg:$OPTARG = app ]
+                then
+                  install_applacation()
+                echo "安装软件" #参数存在$OPTARG中
+                if [arg:$OPTARG = dht11 ]
+                then
+                install_dht11()
+                ;;
+             unzip)
+                unzip_html()
+                echo "解压"
+                ;;
+             ?)  #当有不认识的选项的时候arg为?
+            echo "unkonw argument"
+        exit 1
+        ;;
+        esac
+done
+
