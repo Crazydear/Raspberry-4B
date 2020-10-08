@@ -4,13 +4,13 @@ echo "raspi-config安装脚本"
 if ! [ -x "$(command -v raspi-config)" ]; then
   echo 'raspi-config is not installed.' >&2
   echo '现在开始安装...' >&2
-  url="https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20200727_all.deb"
+  url="https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20200902_all.deb"
   cd /tmp
   wget $url
-  sudo apt-get install -y lua5.1  libatopology2 libfftw3-single3 libsamplerate0 alsa-utils
-  sudo dpkg -i raspi-config_20200727_all.deb
+  sudo apt-get install -y lua5.1  libatopology2 libfftw3-single3 libsamplerate0 alsa-utils whiptail parted initramfs-tools
+  sudo dpkg -i raspi-config_20200902_all.deb
   echo "install completed"
-  rm -f raspi-config_20200727_all.deb
+  rm -f raspi-config_20200902_all.deb
   exit 1
 else
   echo "raspi-config已经安装"
