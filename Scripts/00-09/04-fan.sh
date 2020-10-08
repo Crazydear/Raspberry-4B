@@ -22,6 +22,6 @@ fi
 if [ $tem -le 40000 ]
 then
 echo 1 > /sys/class/gpio/gpio14/value 
-echo 14 >/sys/class/gpio/unexport
-echo "温度不高，已经unexport"
+# echo 14 >/sys/class/gpio/unexport
+echo "温度不高"
 fi
