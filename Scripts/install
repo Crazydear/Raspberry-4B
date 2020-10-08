@@ -1,0 +1,6 @@
+apt-get install nginx-extras -y
+apt-get install php7.4-fpm php7.4-mbstring php7.4-mysql php7.4-sqlite3 php7.4-xml php7.4-curl php7.4-readline php7.4-zip -y
+apt install mariadb-server -y
+apt-get install python3-pip
+apt-get install subversion -y
+apt-get install aria2 -y
