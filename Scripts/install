@@ -43,27 +43,3 @@ pip3 install sqlite3
 mv 00-09/07-dht11a.py /usr/local/sbin/dht11a
 chmod +x /usr/local/sbin/dht11a
 }
-
-while getopts "install:unzip" arg #选项后面的冒号表示该选项需要参数
-do
-        case $arg in
-             install)
-                if [arg:$OPTARG = app ]
-                then
-                  install_applacation()
-                echo "安装软件" #参数存在$OPTARG中
-                if [arg:$OPTARG = dht11 ]
-                then
-                install_dht11()
-                ;;
-             unzip)
-                unzip_html()
-                echo "解压"
-                ;;
-             ?)  #当有不认识的选项的时候arg为?
-            echo "unkonw argument"
-        exit 1
-        ;;
-        esac
-done
-
