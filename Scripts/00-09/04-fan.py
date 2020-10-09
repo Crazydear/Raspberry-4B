@@ -10,7 +10,7 @@
 import RPi.GPIO as GPIO
 import time
 
-fan_pin = 14
+fan_pin = 26
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(fan_pin,GPIO.OUT)
@@ -30,7 +30,7 @@ def get_CPU_temp():
 off_fan()
 while True:
     temp = get_CPU_temp()
-    if temp > 55:
+    if temp > 65:
         on_fan()
     if temp < 38:
         off_fan()
