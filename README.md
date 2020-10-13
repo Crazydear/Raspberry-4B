@@ -53,7 +53,7 @@ svn checkout https://github.com/Crazydear/Raspberry-4B/trunk/Scripts
 
 ### Alipay 支付宝
 
-![alipay](imges/alipay_donate.jpg)
+![alipay](images/alipay_donate.jpg)
 
 ### Wechat 微信
 
