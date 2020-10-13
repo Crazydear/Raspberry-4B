@@ -46,3 +46,16 @@ svn checkout https://github.com/Crazydear/Raspberry-4B/trunk/Scripts
 ## 2020.07.10 入手树莓派
 
 同时也购买了一些其他的零件，包括外壳，温湿度传感器
+
+## Donate
+
+如果你觉得此项目对你有帮助，可以捐助我们，以鼓励项目能持续发展，更加完善
+
+### Alipay 支付宝
+
+![alipay](imges/alipay_donate.jpg)
+
+### Wechat 微信
+
+![wechat](images/WeChat_donate.jpg)
+
