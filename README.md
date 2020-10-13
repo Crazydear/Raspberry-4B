@@ -51,5 +51,6 @@ svn checkout https://github.com/Crazydear/Raspberry-4B/trunk/Scripts
 
 如果你觉得此项目对你有帮助，可以捐助我，以鼓励项目能持续发展，更加完善
 
-| Alipay 支付宝 |  Wechat 微信 |
+|    Alipay 支付宝      |  Wechat 微信     |
+| -----------------     | ---------------- |
 |![alipay](images/alipay_donate.jpg)|![wechat](images/WeChat_donate.jpg)|
