@@ -10,15 +10,7 @@ import RPi.GPIO as GPIO
 import dht11
 import sqlite3
 import datetime
-
-# initialize GPIO
-GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM)
-GPIO.cleanup()
-
-# read data using pin 25
-instance = dht11.DHT11(pin = 25)
-result = instance.read()
+import time
 
 def sql_init():
 	# 创建数据库表
@@ -50,13 +42,23 @@ def sqlwrite(result):
 	    cur.close()	# 关闭游标
 	    con.close()	# 关闭连接
 
+if __name__ == "__main__":
 
-if __name__ == '__main__':   
-    if result.is_valid():
-        print("Temperature: %-3.1f C" % result.temperature)
-        print("Humidity: %-3.1f %%" % result.humidity)
-        with open('/var/www/html/pi-dashboard/temp.txt','w') as f:
+    # initialize GPIO
+    GPIO.setwarnings(False)
+    GPIO.setmode(GPIO.BCM)
+    GPIO.cleanup()
+
+    # read data using pin 25
+    instance = dht11.DHT11(pin = 25)
+    while True:    
+        result = instance.read()
+        if result.is_valid():
+            print(datetime.datetime.now().replace(microsecond=0),"Temperature: %-3.1f C" % result.temperature,"Humidity: %-3.1f %%" % result.humidity)
+            with open('/var/www/html/pi-dashboard/temp.txt','w') as f:
                 f.write("温度:{0:0.1f}°C | 湿度:{1:0.1f}%".format(result.temperature, result.humidity))
-        sqlwrite(result)
-    else:
-        print("Error: %d" % result.error_code)
+            sqlwrite(result)
+            break
+        else:
+            print(datetime.datetime.now().replace(microsecond=0),"Error: %d" % result.error_code)
+            time.sleep(5)
