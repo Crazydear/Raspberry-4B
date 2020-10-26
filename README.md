@@ -39,7 +39,8 @@ svn checkout https://github.com/Crazydear/Raspberry-4B/trunk/Scripts
 | 16   | LCD显示 | [链接](./Scripts/00-09/06-LCD1602.py)   |
 | 17   | DHT11模块   | [链接](./Scripts/00-09/07-dht11a.py)  \|[链接2](./Scripts/00-09/07-dht11a.py)  |
 | 18   | PCF8591模块 | [链接](./Scripts/00-09/08-PCF8591.py) |
-|      |                      |                          |
+| 19   | 网站状态检测  |  [链接](./Scripts/00-09/09-webstatus)  |
+|       |           |
 
 # 项目时间线
 
