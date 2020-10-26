@@ -1,0 +1,11 @@
+#!/bin/bash
+# 网站状态检测，如果不正常则启动frpc服务
+# 利用crontab定时，每隔30分钟运行一次
+
+title=$(curl www.hearme.icu | grep -oP '(?<=<title>).*(?=<\/title>)')
+echo  $title
+error="Waiting"
+
+if [ "$title" != "$error" ];then
+/usr/sbin/service frpc start
+fi
