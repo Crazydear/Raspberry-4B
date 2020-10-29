@@ -7,7 +7,7 @@
 | [树莓派官方下载地址](https://www.raspberrypi.org/downloads/) | [树莓派boot文件项目地址](https://github.com/raspberrypi/firmware) | [树莓派实验室](https://shumeipai.nxez.com/) |
 | [树莓派官方镜像站](https://downloads.raspberrypi.org/)       | [树莓派EEPROM项目地址](https://github.com/raspberrypi/rpi-eeprom) | [树莓派资源整理汇总](https://segmentfault.com/a/1190000021776077) |
 | [清华镜像源](https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/) | [raspi-config](https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/) [安装脚本](./Scripts/00/official/raspi-config)|  [树莓派官方论坛](https://www.raspberrypi.org/forums/)       |
-|           |           |        |
+|           | [rpi-update](https://github.com/Hexxeh/rpi-update)          |        |
 
 
 脚本下载命令
