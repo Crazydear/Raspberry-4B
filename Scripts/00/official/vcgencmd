@@ -1,23 +1,43 @@
 #!/bin/bash
 # 安装vcgencmd
 
-# 64位系统
-if [ arch == "aarch64"]; then
+# 编译64位系统
+function install_aarch64(){
+	git clone https://github.com/raspberrypi/userland.git 
+  	cd userland
+  	./buildme --aarch64
+  	echo "/opt/vc/lib" >> /etc/ld.so.conf
+  	ldconfig
+}
+
+# 已经编译好的64位
+function install_aarch64d(){
+	cd /opt
+  	svn checkout https://github.com/Crazydear/Raspberry-4B/trunk/SoftWare/vc
+  	echo "/opt/vc/lib" >> /etc/ld.so.conf
+  	ldconfig
+}
+
+# 已经编译好的32位
+function install_32(){
+	cd /opt
+  	svn checkout https://github.com/raspberrypi/firmware/trunk/opt/vc
+  	echo "/opt/vc/lib" >> /etc/ld.so.conf
+  	ldconfig
+}
+
+# 根据自己的需要选择相应的64位安装方式
+version=$(arch)
+if [[ $version == "aarch64" ]]; then
   echo `arch` 
-  git clone https://github.com/raspberrypi/userland.git 
-  cd userland
-  ./buildme --aarch64
-  echo "/opt/vc/lib" >> /etc/ld.so.conf
-  ldconfig
+  install_aarch64
+  #install_aarch64d
   exit
 fi
 
 # 32位系统
 if [ ! -d "/opt/vc" ]; then
-  cd /opt
-  svn checkout https://github.com/raspberrypi/firmware/trunk/opt/vc
-  echo "/opt/vc/lib" >> /etc/ld.so.conf
-  ldconfig
+  install_32
   echo "install vcgencmd comleted!"
 else
   echo "vcgencmd 已经安装"  
