@@ -1,10 +1,7 @@
 #!/bin/bash
 
-echo "raspi-config安装脚本"
-if ! [ -x "$(command -v raspi-config)" ]; then
-  echo 'raspi-config is not installed.' >&2
-  echo '现在开始安装...' >&2
-  latest=$(curl https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/ | egrep -o "raspi-config_[0-9]{8}_all.deb" |sort -rn)
+function install_raspi(){
+    latest=$(curl https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/ | egrep -o "raspi-config_[0-9]{8}_all.deb" |sort -rn)
   url="https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/"
   cd /tmp
   wget $url${latest: 0 :29}
@@ -12,8 +9,26 @@ if ! [ -x "$(command -v raspi-config)" ]; then
   sudo dpkg -i ${latest: 0 :29}
   echo "install completed"
   rm -f ${latest: 0 :29}
+}
+
+
+echo "raspi-config安装脚本"
+if ! [ -x "$(command -v raspi-config)" ]; then
+  echo 'raspi-config is not installed.' >&2
+  echo '现在开始安装...' >&2
+  install_raspi
+  echo "raspi-config已经安装"
   exit 1
 else
-  echo "raspi-config已经安装"
+	latest_version=$(curl https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/ | egrep -o "raspi-config_[0-9]{8}_all.deb" |sort -rn)
+	version=$(dpkg -l | grep raspi-config)
+  	if [[ "${version: 16 :8}"=="${latest_version: 13 :8}" ]]
+  	then 
+		echo "版本为最新，不需要更新，当前版本为："
+		echo `dpkg -l | grep raspi-config`
+  	else
+		install_raspi
+  	fi
 fi
+
 
