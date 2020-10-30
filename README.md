@@ -1,3 +1,5 @@
+![visitors](https://visitor-badge.glitch.me/badge?page_id=Crazydear-Raspberry-4B)
+
 ## 此项目为基于树莓派4B，主要用于记录自己开发的各种坑及使用方法
 
 先在这里写下几个常用的网址
