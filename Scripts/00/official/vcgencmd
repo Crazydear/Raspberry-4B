@@ -5,6 +5,7 @@
 function install_aarch64(){
 	git clone https://github.com/raspberrypi/userland.git 
   	cd userland
+	sudo apt-get install cmake build-essential
   	./buildme --aarch64
   	echo "/opt/vc/lib" >> /etc/ld.so.conf
 	echo "export PATH=\"/opc/vc/bin/:\$PATH\"" >> /etc/profile
