@@ -120,7 +120,7 @@
 
 **N.B.编辑此文件时，请保留缩进级别，以使其易于以编程方式进行解析。没有硬标签。**
 
-```yaml
+```yacas
 Name:   <The base DTB>
 Info:   Configures the base Raspberry Pi hardware # 配置树莓派的基础硬件
 Load:   <loaded automatically>					  # 自动加载
@@ -229,22 +229,16 @@ Params:
         N.B. It is recommended to only enable those interfaces that are needed. Leaving all interfaces enabled can lead to unwanted behaviour (i2c_vc interfering with Pi Camera, I2S and SPI hogging GPIO pins, etc.) Note also that i2c, i2c_arm and i2c_vc are aliases for the physical interfaces i2c0 and i2c1. Use of the numeric variants is still possible but deprecated because the ARM/VC assignments differ between board revisions. The same board-specific mapping applies to i2c_baudrate, and the other i2c baudrate parameters.
         #  N.B.建议仅启用所需的那些接口。使所有接口保持启用状态可能会导致不良行为（i2c_vc干扰Pi Camera，I2S和SPI占用GPIO引脚等）。另请注意，i2c,i2c_arm和i2c_vc是物理接口i2c0和i2c1的别名。仍然可以使用数字变量，但由于ARM/VC分配在板修订版之间不同，因此不建议使用。相同的特定于板的映射适用于i2c_baudrate和其他i2c波特率参数。
 ```
-```
+```yacas
 Name:   act-led
-Info:   Pi 3B, 3B+, 3A+ and 4B use a GPIO expander to drive the LEDs which can
-        only be accessed from the VPU. There is a special driver for this with a
-        separate DT node, which has the unfortunate consequence of breaking the
-        act_led_gpio and act_led_activelow dtparams.
-        This overlay changes the GPIO controller back to the standard one and
-        restores the dtparams.
+Info:   Pi 3B, 3B+, 3A+ and 4B use a GPIO expander to drive the LEDs which can only be accessed from the VPU. There is a special driver for this with a separate DT node, which has the unfortunate consequence of breaking the act_led_gpio and act_led_activelow dtparams.This overlay changes the GPIO controller back to the standard one and restores the dtparams.
+# Pi 3B,3B+,3A+和4B使用GPIO扩展器来驱动只能通过VPU访问的LED。为此，有一个特殊的驱动程序带有单独的设备树节点，不幸的结果是破坏了act_led_gpio和act_led_activelow dtparams。此覆盖将GPIO控制器改回标准控制器，并恢复dtparams。
 Load:   dtoverlay=act-led,<param>=<val>
-Params: activelow               Set to "on" to invert the sense of the LED
-                                (default "off")
+Params: activelow               Set to "on" to invert the sense of the LED (default "off")
+								# 设置为“开”以反转LED的亮度（默认为“关”）
+        gpio                    Set which GPIO to use for the activity LED (in case you want to connect it to an external device) REQUIRED
+								# 设置要用于活动LED的GPIO（如果您想将其连接到外部设备）
 
-        gpio                    Set which GPIO to use for the activity LED
-                                (in case you want to connect it to an external
-                                device)
-                                REQUIRED
 
 ```
 ```
