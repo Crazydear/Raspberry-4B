@@ -120,10 +120,10 @@
 
 **N.B.编辑此文件时，请保留缩进级别，以使其易于以编程方式进行解析。没有硬标签。**
 
-```yacas
+```yaml
 Name:   <The base DTB>
 Info:   Configures the base Raspberry Pi hardware # 配置树莓派的基础硬件
-Load:   <loaded automatically>					  # 自动加载
+Load:   <loaded automatically>	 # 自动加载
 Params:
         ant1                    Select antenna 1 (default). CM4 only.
 				# 选择天线1（默认）。仅支持CM4。
@@ -147,8 +147,7 @@ Params:
                                 # 有效值为2、3、4、5和0，其中0表示永不降档（默认为2）。仅支持Pi3B +。
         eth_led0                Set mode of LED0 - amber on Pi3B+ (default "1"),green on Pi4 (default "0").
         			# 设置LED0的模式-Pi3B +上为琥珀色（默认为“1”），Pi4上为绿色（默认为“0”）。
-                                The legal values are:
-                                # 有效值如下
+                                The legal values are: # 有效值如下
                                 Pi3B+
                                 0=link/activity         1=link1000/activity      2=link100/activity
                                 3=link10/activity 		4=link100/1000/activity  5=link10/1000/activity
@@ -245,12 +244,12 @@ Name:   adafruit18
 Info:   Overlay for the SPI-connected Adafruit 1.8" display (based on the ST7735R chip). It includes support for the "green tab" version.
 	# 用于SPI连接的Adafruit 1.8''显示屏（基于ST7735R芯片）的覆盖。它包括对“绿色选项卡”版本的支持。
 Load:   dtoverlay=adafruit18,<param>=<val>
-Params: green                   Use the adafruit18_green variant. # 使用adafruit18_green变体。
-        rotate                  Display rotation {0,90,180,270}   # 旋转显示旋转{0,90,180,270}
-        speed                   SPI bus speed in Hz (default 4000000) # SPI总线速度（Hz）（默认4000000）
-        fps                     Display frame rate in Hz          # 以Hz为单位显示帧频
+Params: green                   Use the adafruit18_green variant. 	# 使用adafruit18_green变体。
+        rotate                  Display rotation {0,90,180,270}   	# 旋转显示旋转{0,90,180,270}
+        speed                   SPI bus speed in Hz (default 4000000) 	# SPI总线速度（Hz）（默认4000000）
+        fps                     Display frame rate in Hz          	# 以Hz为单位显示帧频
         bgr                     Enable BGR mode (default off)		# 启用BGR模式（默认关闭）
-        debug                   Debug output level {0-7}			# 调试输出级别{0-7}
+        debug                   Debug output level {0-7}		# 调试输出级别{0-7}
         dc_pin                  GPIO pin for D/C (default 24)		# D/C的GPIO引脚（默认为24）
         reset_pin               GPIO pin for RESET (default 25)		# RESET的GPIO引脚（默认25）
         led_pin                 GPIO used to control backlight (default 18)	# GPIO用于控制背光（默认值为18）
@@ -281,7 +280,7 @@ Params: addr                    I2C bus address of device. Set based on how the 
 > Channel (ch) parameters can be set for each enabled channel. A maximum of 4 channels can be enabled (letters a thru d).
 >         For more information refer to the device datasheet at: http://www.ti.com/lit/ds/symlink/ads1015.pdf
 
-**可以为每个启用的通道设置通道（ch）参数。最多可以启用4个通道（字母a至d）。有关更多信息，请参见以下设备的数据表：[链接](http://www.ti.com/lit/ds/symlink/ads1015.pdf)**
+**可以为每个启用的通道设置通道（ch）参数。最多可以启用4个通道（字母a至d）。有关更多信息，请参见以下设备的数据表：【[ADS1015](http://www.ti.com/lit/ds/symlink/ads1015.pdf)】**
 
 ```
 Name:   ads1115
@@ -502,8 +501,7 @@ Params: interrupt               GPIO used for INT (default 23)
 Name:   audioinjector-addons
 Info:   Configures the audioinjector.net audio add on soundcards
 Load:   dtoverlay=audioinjector-addons,<param>=<val>
-Params: non-stop-clocks         Keeps the clocks running even when the stream
-                                is paused or stopped (default off)
+Params: non-stop-clocks         Keeps the clocks running even when the stream is paused or stopped (default off)
 ```
 ```
 Name:   audioinjector-isolated-soundcard
@@ -526,8 +524,7 @@ Params: <None>
 ```
 Name:   audiosense-pi
 Info:   Configures the audiosense-pi add on soundcard
-        For more information refer to
-        https://gitlab.com/kakar0t/audiosense-pi
+        For more information refer to https://gitlab.com/kakar0t/audiosense-pi
 Load:   dtoverlay=audiosense-pi
 Params: <None>
 ```
@@ -544,8 +541,7 @@ Params: swap_lr                 Reverse the channel allocation, which will also
 ```
 ```
 Name:   balena-fin
-Info:   Overlay that enables WiFi, Bluetooth and the GPIO expander on the
-        balenaFin carrier board for the Raspberry Pi Compute Module 3/3+ Lite.
+Info:   Overlay that enables WiFi, Bluetooth and the GPIO expander on the balenaFin carrier board for the Raspberry Pi Compute Module 3/3+ Lite.
 Load:   dtoverlay=balena-fin
 Params: <None>
 ```
@@ -573,8 +569,7 @@ Params: cma-512                 CMA is 512MB (needs 1GB)
 ```
 ```
 Name:   dht11
-Info:   Overlay for the DHT11/DHT21/DHT22 humidity/temperature sensors
-        Also sometimes found with the part number(s) AM230x.
+Info:   Overlay for the DHT11/DHT21/DHT22 humidity/temperature sensors, Also sometimes found with the part number(s) AM230x.
 Load:   dtoverlay=dht11,<param>=<val>
 Params: gpiopin                 GPIO connected to the sensor's DATA output.
                                 (default 4)
@@ -705,8 +700,7 @@ Params: dr_mode                 Dual role mode: "host", "peripheral" or "otg"
     
         g-np-tx-fifo-size       Size of non-periodic tx fifo size in gadget
                                 mode
-
-
+				
 [ The ds1307-rtc overlay has been deleted. See i2c-rtc. ]
 ```
 ```
@@ -796,7 +790,7 @@ Params: gpiopin                 GPIO used to control the fan (default 12)
 ```yaml
 Name:   gpio-ir
 Info:   Use GPIO pin as rc-core style infrared receiver input. The rc-core- based gpio_ir_recv driver maps received keys directly to a /dev/input/event* device, all decoding is done by the kernel - LIRC is not required! The key mapping and other decoding parameters can be configured by "ir-keytable" tool.
-		# 使用GPIO引脚作为rc核心样式的红外接收器输入。基于rc-core的gpio_ir_recv驱动程序将接收到的密钥直接映射到/dev/input/event*设备，所有解码均由内核完成-不需要LIRC！密钥映射和其他解码参数可以通过“ir-keytable”工具进行配置。
+	# 使用GPIO引脚作为rc核心样式的红外接收器输入。基于rc-core的gpio_ir_recv驱动程序将接收到的密钥直接映射到/dev/input/event*设备，所有解码均由内核完成-不需要LIRC！密钥映射和其他解码参数可以通过“ir-keytable”工具进行配置。
 Load:   dtoverlay=gpio-ir,<param>=<val>
 Params: gpio_pin                Input pin number. Default is 18. # 输入引脚号。默认值为18。
         gpio_pull               Desired pull-up/down state (off, down, up) Default is "up". # 所需的上拉/下拉状态（off,down,up）默认为“up”。
@@ -808,7 +802,7 @@ Params: gpio_pin                Input pin number. Default is 18. # 输入引脚�
 ```yaml
 Name:   gpio-ir-tx
 Info:   Use GPIO pin as bit-banged infrared transmitter output.
-		# 使用GPIO引脚作为位撞击式红外发射器输出。
+	# 使用GPIO引脚作为位撞击式红外发射器输出。
         This is an alternative to "pwm-ir-tx". gpio-ir-tx doesn't require a PWM so it can be used together with onboard analog audio.
         # 这是“pwm-ir-tx”的替代方法.gpio-ir-tx不需要PWM,因此可以与板载模拟音频一起使用。
 Load:   dtoverlay=gpio-ir-tx,<param>=<val>
