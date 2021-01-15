@@ -126,27 +126,27 @@ Info:   Configures the base Raspberry Pi hardware # 配置树莓派的基础硬�
 Load:   <loaded automatically>					  # 自动加载
 Params:
         ant1                    Select antenna 1 (default). CM4 only.
-								# 选择天线1（默认）。仅支持CM4。
+				# 选择天线1（默认）。仅支持CM4。
         ant2                    Select antenna 2. CM4 only.
-    							# 选择天线2。仅支持CM4。
+    				# 选择天线2。仅支持CM4。
         noant                   Disable both antennas. CM4 only.
-    							# 禁用两个天线。仅支持CM4
+    				# 禁用两个天线。仅支持CM4
         audio                   Set to "on" to enable the onboard ALSA audio interface (default "off")
-    							# 设置为“开”以启用板载ALSA音频接口（默认为“关”）
+    				# 设置为“开”以启用板载ALSA音频接口（默认为“关”）
         axiperf                 Set to "on" to enable the AXI bus performancemonitors.
-        						# 设置为“on”以启用AXI总线性能监视器。
+        			# 设置为“on”以启用AXI总线性能监视器。
                                 See /sys/kernel/debug/raspberrypi_axi_monitor for the results.
                                 # 有关结果，请参见/sys/kernel/debug/raspberrypi_axi_monitor。
         eee                     Enable Energy Efficient Ethernet support for compatible devices (default "on"). 
-        						# 为兼容设备启用节能以太网支持（默认为“on”）。
-        						See also "tx_lpi_timer". Pi3B+ only.
-        						# 另请参见“ tx_lpi_timer”。仅支持Pi3B +。
+        			# 为兼容设备启用节能以太网支持（默认为“on”）。
+        			See also "tx_lpi_timer". Pi3B+ only.
+        			# 另请参见“ tx_lpi_timer”。仅支持Pi3B +。
         eth_downshift_after     Set the number of auto-negotiation failures after which the 1000Mbps modes are disabled.
-        						# 设置自动协商失败的次数，此后禁用1000Mbps模式。
+        			# 设置自动协商失败的次数，此后禁用1000Mbps模式。
                                 Legal values are 2, 3, 4, 5 and 0, where 0 means never downshift (default 2). Pi3B+ only.
                                 # 有效值为2、3、4、5和0，其中0表示永不降档（默认为2）。仅支持Pi3B +。
         eth_led0                Set mode of LED0 - amber on Pi3B+ (default "1"),green on Pi4 (default "0").
-        						# 设置LED0的模式-Pi3B +上为琥珀色（默认为“1”），Pi4上为绿色（默认为“0”）。
+        			# 设置LED0的模式-Pi3B +上为琥珀色（默认为“1”），Pi4上为绿色（默认为“0”）。
                                 The legal values are:
                                 # 有效值如下
                                 Pi3B+
@@ -160,64 +160,61 @@ Params:
                                 7=Speed/Flash 		8=Link   		9=Activity
     
         eth_led1                Set mode of LED1 - green on Pi3B+ (default "6"), amber on Pi4 (default "8"). See eth_led0 for legal values.
-        						# 设置LED1的模式-Pi3B +上为绿色（默认为“6”），Pi4上为琥珀色（默认为“8”）。有关有效值，请参见eth_led0。
-    
+        			# 设置LED1的模式-Pi3B +上为绿色（默认为“6”），Pi4上为琥珀色（默认为“8”）。有关有效值，请参见eth_led0。  
         eth_max_speed           Set the maximum speed a link is allowed to negotiate. Legal values are 10, 100 and  1000 (default 1000). Pi3B+ only.
-        						# 设置允许链接协商的最大速度。有效值为10、100和1000（默认值为1000）。仅支持Pi3B+。
-    
+        			# 设置允许链接协商的最大速度。有效值为10、100和1000（默认值为1000）。仅支持Pi3B+。
         i2c_arm                 Set to "on" to enable the ARM's i2c interface (default "off")
-    
+				# 设置为“ on”以启用ARM的i2c接口（默认为“ off”）
         i2c_vc                  Set to "on" to enable the i2c interface usually reserved for the VideoCore processor (default "off")
-        						# 设置为“ on”以启用i2c接口，通常为VideoCore处理器保留（默认为“关闭”）
-    
+        			# 设置为“ on”以启用i2c接口，通常为VideoCore处理器保留（默认为“关闭”）
         i2c                     An alias for i2c_arm
-    							# i2c_arm的别名
+    				# i2c_arm的别名
         i2c_arm_baudrate        Set the baudrate of the ARM's i2c interface (default "100000")
-    							# 设置ARM的i2c接口的波特率（默认为“100000”）
+    				# 设置ARM的i2c接口的波特率（默认为“100000”）
         i2c_vc_baudrate         Set the baudrate of the VideoCore i2c interface (default "100000")
-    							# 设置VideoCore i2c接口的波特率（默认为“ 100000”）
+    				# 设置VideoCore i2c接口的波特率（默认为“ 100000”）
         i2c_baudrate            An alias for i2c_arm_baudrate
-    							# i2c_arm_baudrate的别名
+    				# i2c_arm_baudrate的别名
         i2s                     Set to "on" to enable the i2s interface (default "off")
-    							# 设置为“on”以启用i2s接口（默认为“off”）
+    				# 设置为“on”以启用i2s接口（默认为“off”）
         krnbt                   Set to "on" to enable autoprobing of Bluetooth driver without need of hciattach/btattach (default "off")
-        						# 设置为“on”以启用对蓝牙驱动程序的自动探测，而无需进行hciattach/btattach（默认为“off”）
+        			# 设置为“on”以启用对蓝牙驱动程序的自动探测，而无需进行hciattach/btattach（默认为“off”）
         krnbt_baudrate          Set the baudrate of the PL011 UART when used with krnbt=on
-    							# 与 krnbt=on 一起使用时，设置PL011 UART的波特率
+    				# 与 krnbt=on 一起使用时，设置PL011 UART的波特率
         spi                     Set to "on" to enable the spi interfaces (default "off")
-    							# 设置为“ on”以启用spi接口（默认为“ off”）
+    				# 设置为“ on”以启用spi接口（默认为“ off”）
         spi_dma4                Use to enable 40-bit DMA on spi interfaces (the assigned value doesn't matter)(2711 only)
-        						# 用于在spi接口上启用40位DMA（分配的值无关紧要）（仅支持2711）
+        			# 用于在spi接口上启用40位DMA（分配的值无关紧要）（仅支持2711）
         random                  Set to "on" to enable the hardware random number generator (default "on")
-        						# 设置为“on”以启用硬件随机数生成器（默认为“on”）
+        			# 设置为“on”以启用硬件随机数生成器（默认为“on”）
         sd_overclock            Clock (in MHz) to use when the MMC framework requests 50MHz
-        						# MMC框架请求50MHz时要使用的时钟（以MHz为单位）
+        			# MMC框架请求50MHz时要使用的时钟（以MHz为单位）
         sd_poll_once            Looks for a card once after booting. Useful for network booting scenarios to avoid the overhead of continuous polling. N.B. Using this option restricts the system to using a single card per boot (or none at all). (default off)
-        						# 引导后查找一次卡。对于网络启动方案很有用，可避免连续轮询的开销。N.B.使用此选项将系统限制为每次引导仅使用一张卡（或完全不使用）。（默认关闭）
+        			# 引导后查找一次卡。对于网络启动方案很有用，可避免连续轮询的开销。N.B.使用此选项将系统限制为每次引导仅使用一张卡（或完全不使用）。（默认关闭）
         sd_force_pio            Disable DMA support for SD driver (default off)
-        						# 禁用对SD驱动程序的DMA支持（默认关闭）    
+        			# 禁用对SD驱动程序的DMA支持（默认关闭）    
         sd_pio_limit            Number of blocks above which to use DMA for SD card (default 1)
-        						# 将DMA用于SD卡的块数（默认为1）
+        			# 将DMA用于SD卡的块数（默认为1）
         sd_debug                Enable debug output from SD driver (default off)
-        						# 启用SD驱动程序的调试输出（默认关闭）
+        			# 启用SD驱动程序的调试输出（默认关闭）
         sdio_overclock          Clock (in MHz) to use when the MMC framework requests 50MHz for the SDIO/WiFi interface.
-        						# MMC框架为SDIO / WiFi接口请求50MHz时使用的时钟（以MHz为单位）。
+        			# MMC框架为SDIO / WiFi接口请求50MHz时使用的时钟（以MHz为单位）。
         tx_lpi_timer            Set the delay in microseconds between going idle and entering the low power state (default 600). Requires EEE to be enabled - see "eee".
-        						# 设置从空闲到进入低功耗状态之间的延迟(以微秒为单位)(默认为600)。需要启用EEE-请参阅“eee”。
+        			# 设置从空闲到进入低功耗状态之间的延迟(以微秒为单位)(默认为600)。需要启用EEE-请参阅“eee”。
         uart0                   Set to "off" to disable uart0 (default "on")
-        						# 设置为“关”以禁用uart0（默认为“开”）
+        			# 设置为“关”以禁用uart0（默认为“开”）
         uart1                   Set to "on" or "off" to enable or disable uart1 (default varies)
-    							# 设置为“on”或“off”以启用或禁用uart1（默认值有所不同）
+    				# 设置为“on”或“off”以启用或禁用uart1（默认值有所不同）
         watchdog                Set to "on" to enable the hardware watchdog (default "off")
-    							# 设置为“开”以启用硬件看门狗（默认为“关”）
+    				# 设置为“开”以启用硬件看门狗（默认为“关”）
         act_led_trigger         Choose which activity the LED tracks. Use "heartbeat" for a nice load indicator.(default "mmc")
-    							# 选择LED跟踪的活动。使用“心跳”作为良好的负载指示器。（默认为“mmc”）
+    				# 选择LED跟踪的活动。使用“心跳”作为良好的负载指示器。（默认为“mmc”）
         act_led_activelow       Set to "on" to invert the sense of the LED (default "off")
-        						# 设置为“开”以反转LED的感觉（默认为“关”）。
+        			# 设置为“开”以反转LED的感觉（默认为“关”）。
                                 N.B. For Pi 3B, 3B+, 3A+ and 4B, use the act-led overlay.
                                 # 对于Pi 3B,3B+,3A+和4B，请使用act-led overlay。
         act_led_gpio            Set which GPIO to use for the activity LED (in case you want to connect it to an external device)
-        						# 设置用于活动LED的GPIO（如果要将其连接到外部设备）
+        			# 设置用于活动LED的GPIO（如果要将其连接到外部设备）
                                 (default "16" on a non-Plus board, "47" on a Plus or Pi 2)
                                 # （非Plus板上的默认值为“ 16”，Plus或Pi 2上的默认值为“ 47”）
                                 N.B. For Pi 3B, 3B+, 3A+ and 4B, use the act-led overlay.
