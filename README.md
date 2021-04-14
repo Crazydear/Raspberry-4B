@@ -59,3 +59,7 @@ svn checkout https://github.com/Crazydear/Raspberry-4B/trunk/Scripts
 |    Alipay 支付宝      |  Wechat 微信     |
 | -----------------     | ---------------- |
 |![alipay](images/alipay_donate.jpg)|![wechat](images/WeChat_donate.jpg)|
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/Crazydear/Raspberry-4B.svg)](https://starchart.cc/Crazydear/Raspberry-4B)
